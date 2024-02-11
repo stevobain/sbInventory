@@ -37,25 +37,25 @@
             PartMin = new DataGridViewTextBoxColumn();
             PartMax = new DataGridViewTextBoxColumn();
             label2 = new Label();
-            button1 = new Button();
+            mainSearchPartBtn = new Button();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            button2 = new Button();
+            mainSearchProductBtn = new Button();
             label3 = new Label();
             dataGridView2 = new DataGridView();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
             ProductID = new DataGridViewTextBoxColumn();
             ProdName = new DataGridViewTextBoxColumn();
             ProductInventory = new DataGridViewTextBoxColumn();
             ProductPrice = new DataGridViewTextBoxColumn();
             ProductMin = new DataGridViewTextBoxColumn();
             ProductMax = new DataGridViewTextBoxColumn();
+            mainAddPartBtn = new Button();
+            mainModifyPartBtn = new Button();
+            mainDeletePartBtn = new Button();
+            mainAddProdBtn = new Button();
+            mainModifyProdBtn = new Button();
+            mainDeleteProdBtn = new Button();
+            mainExitBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -80,6 +80,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.ScrollBars = ScrollBars.Vertical;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(381, 242);
             dataGridView1.TabIndex = 1;
             // 
@@ -134,16 +135,17 @@
             label2.TabIndex = 2;
             label2.Text = "Parts";
             // 
-            // button1
+            // mainSearchPartBtn
             // 
-            button1.AutoSize = true;
-            button1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button1.Location = new Point(133, 60);
-            button1.Name = "button1";
-            button1.Size = new Size(52, 25);
-            button1.TabIndex = 3;
-            button1.Text = "Search";
-            button1.UseVisualStyleBackColor = true;
+            mainSearchPartBtn.AutoSize = true;
+            mainSearchPartBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainSearchPartBtn.Location = new Point(133, 60);
+            mainSearchPartBtn.Name = "mainSearchPartBtn";
+            mainSearchPartBtn.Size = new Size(52, 25);
+            mainSearchPartBtn.TabIndex = 3;
+            mainSearchPartBtn.Text = "Search";
+            mainSearchPartBtn.UseVisualStyleBackColor = true;
+            mainSearchPartBtn.Click += mainSearchPartBtn_Click;
             // 
             // textBox1
             // 
@@ -159,16 +161,17 @@
             textBox2.Size = new Size(202, 23);
             textBox2.TabIndex = 8;
             // 
-            // button2
+            // mainSearchProductBtn
             // 
-            button2.AutoSize = true;
-            button2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button2.Location = new Point(539, 60);
-            button2.Name = "button2";
-            button2.Size = new Size(52, 25);
-            button2.TabIndex = 7;
-            button2.Text = "Search";
-            button2.UseVisualStyleBackColor = true;
+            mainSearchProductBtn.AutoSize = true;
+            mainSearchProductBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainSearchProductBtn.Location = new Point(539, 60);
+            mainSearchProductBtn.Name = "mainSearchProductBtn";
+            mainSearchProductBtn.Size = new Size(52, 25);
+            mainSearchProductBtn.TabIndex = 7;
+            mainSearchProductBtn.Text = "Search";
+            mainSearchProductBtn.UseVisualStyleBackColor = true;
+            mainSearchProductBtn.Click += mainSearchProductBtn_Click;
             // 
             // label3
             // 
@@ -190,85 +193,9 @@
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowTemplate.Height = 25;
             dataGridView2.ScrollBars = ScrollBars.Vertical;
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(400, 242);
             dataGridView2.TabIndex = 5;
-            // 
-            // button3
-            // 
-            button3.AutoSize = true;
-            button3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button3.Location = new Point(237, 337);
-            button3.Name = "button3";
-            button3.Size = new Size(39, 25);
-            button3.TabIndex = 9;
-            button3.Text = "Add\r\n";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.AutoSize = true;
-            button4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button4.Location = new Point(282, 337);
-            button4.Name = "button4";
-            button4.Size = new Size(55, 25);
-            button4.TabIndex = 10;
-            button4.Text = "Modify";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.AutoSize = true;
-            button5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button5.Location = new Point(343, 337);
-            button5.Name = "button5";
-            button5.Size = new Size(50, 25);
-            button5.TabIndex = 11;
-            button5.Text = "Delete";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.AutoSize = true;
-            button6.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button6.Location = new Point(643, 337);
-            button6.Name = "button6";
-            button6.Size = new Size(39, 25);
-            button6.TabIndex = 12;
-            button6.Text = "Add";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            button7.AutoSize = true;
-            button7.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button7.Location = new Point(688, 337);
-            button7.Name = "button7";
-            button7.Size = new Size(55, 25);
-            button7.TabIndex = 13;
-            button7.Text = "Modify";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            button8.AutoSize = true;
-            button8.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button8.Location = new Point(749, 337);
-            button8.Name = "button8";
-            button8.Size = new Size(50, 25);
-            button8.TabIndex = 14;
-            button8.Text = "Delete";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            button9.AutoSize = true;
-            button9.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button9.Location = new Point(762, 368);
-            button9.Name = "button9";
-            button9.Size = new Size(36, 25);
-            button9.TabIndex = 15;
-            button9.Text = "Exit";
-            button9.UseVisualStyleBackColor = true;
             // 
             // ProductID
             // 
@@ -312,6 +239,90 @@
             ProductMax.Name = "ProductMax";
             ProductMax.Width = 55;
             // 
+            // mainAddPartBtn
+            // 
+            mainAddPartBtn.AutoSize = true;
+            mainAddPartBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainAddPartBtn.Location = new Point(237, 337);
+            mainAddPartBtn.Name = "mainAddPartBtn";
+            mainAddPartBtn.Size = new Size(39, 25);
+            mainAddPartBtn.TabIndex = 9;
+            mainAddPartBtn.Text = "Add\r\n";
+            mainAddPartBtn.UseVisualStyleBackColor = true;
+            mainAddPartBtn.Click += mainAddPartBtn_Click;
+            // 
+            // mainModifyPartBtn
+            // 
+            mainModifyPartBtn.AutoSize = true;
+            mainModifyPartBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainModifyPartBtn.Location = new Point(282, 337);
+            mainModifyPartBtn.Name = "mainModifyPartBtn";
+            mainModifyPartBtn.Size = new Size(55, 25);
+            mainModifyPartBtn.TabIndex = 10;
+            mainModifyPartBtn.Text = "Modify";
+            mainModifyPartBtn.UseVisualStyleBackColor = true;
+            mainModifyPartBtn.Click += mainModifyPartBtn_Click;
+            // 
+            // mainDeletePartBtn
+            // 
+            mainDeletePartBtn.AutoSize = true;
+            mainDeletePartBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainDeletePartBtn.Location = new Point(343, 337);
+            mainDeletePartBtn.Name = "mainDeletePartBtn";
+            mainDeletePartBtn.Size = new Size(50, 25);
+            mainDeletePartBtn.TabIndex = 11;
+            mainDeletePartBtn.Text = "Delete";
+            mainDeletePartBtn.UseVisualStyleBackColor = true;
+            mainDeletePartBtn.Click += mainDeletePartBtn_Click;
+            // 
+            // mainAddProdBtn
+            // 
+            mainAddProdBtn.AutoSize = true;
+            mainAddProdBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainAddProdBtn.Location = new Point(643, 337);
+            mainAddProdBtn.Name = "mainAddProdBtn";
+            mainAddProdBtn.Size = new Size(39, 25);
+            mainAddProdBtn.TabIndex = 12;
+            mainAddProdBtn.Text = "Add";
+            mainAddProdBtn.UseVisualStyleBackColor = true;
+            mainAddProdBtn.Click += mainAddProdBtn_Click;
+            // 
+            // mainModifyProdBtn
+            // 
+            mainModifyProdBtn.AutoSize = true;
+            mainModifyProdBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainModifyProdBtn.Location = new Point(688, 337);
+            mainModifyProdBtn.Name = "mainModifyProdBtn";
+            mainModifyProdBtn.Size = new Size(55, 25);
+            mainModifyProdBtn.TabIndex = 13;
+            mainModifyProdBtn.Text = "Modify";
+            mainModifyProdBtn.UseVisualStyleBackColor = true;
+            mainModifyProdBtn.Click += mainModifyProdBtn_Click;
+            // 
+            // mainDeleteProdBtn
+            // 
+            mainDeleteProdBtn.AutoSize = true;
+            mainDeleteProdBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainDeleteProdBtn.Location = new Point(749, 337);
+            mainDeleteProdBtn.Name = "mainDeleteProdBtn";
+            mainDeleteProdBtn.Size = new Size(50, 25);
+            mainDeleteProdBtn.TabIndex = 14;
+            mainDeleteProdBtn.Text = "Delete";
+            mainDeleteProdBtn.UseVisualStyleBackColor = true;
+            mainDeleteProdBtn.Click += mainDeleteProdBtn_Click;
+            // 
+            // mainExitBtn
+            // 
+            mainExitBtn.AutoSize = true;
+            mainExitBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainExitBtn.Location = new Point(762, 368);
+            mainExitBtn.Name = "mainExitBtn";
+            mainExitBtn.Size = new Size(36, 25);
+            mainExitBtn.TabIndex = 15;
+            mainExitBtn.Text = "Exit";
+            mainExitBtn.UseVisualStyleBackColor = true;
+            mainExitBtn.Click += mainExitBtn_Click;
+            // 
             // MainScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -319,19 +330,19 @@
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(810, 402);
-            Controls.Add(button9);
-            Controls.Add(button8);
-            Controls.Add(button7);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
+            Controls.Add(mainExitBtn);
+            Controls.Add(mainDeleteProdBtn);
+            Controls.Add(mainModifyProdBtn);
+            Controls.Add(mainAddProdBtn);
+            Controls.Add(mainDeletePartBtn);
+            Controls.Add(mainModifyPartBtn);
+            Controls.Add(mainAddPartBtn);
             Controls.Add(textBox2);
-            Controls.Add(button2);
+            Controls.Add(mainSearchProductBtn);
             Controls.Add(label3);
             Controls.Add(dataGridView2);
             Controls.Add(textBox1);
-            Controls.Add(button1);
+            Controls.Add(mainSearchPartBtn);
             Controls.Add(label2);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
@@ -348,19 +359,19 @@
         private Label label1;
         private DataGridView dataGridView1;
         private Label label2;
-        private Button button1;
+        private Button mainSearchPartBtn;
         private TextBox textBox1;
         private TextBox textBox2;
-        private Button button2;
+        private Button mainSearchProductBtn;
         private Label label3;
         private DataGridView dataGridView2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
-        private Button button9;
+        private Button mainAddPartBtn;
+        private Button mainModifyPartBtn;
+        private Button mainDeletePartBtn;
+        private Button mainAddProdBtn;
+        private Button mainModifyProdBtn;
+        private Button mainDeleteProdBtn;
+        private Button mainExitBtn;
         private DataGridViewTextBoxColumn PartID;
         private DataGridViewTextBoxColumn PartName;
         private DataGridViewTextBoxColumn PartInventory;

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sbInventory
+namespace sbInventory.Model
 {
-    public class Outsourced : Part
+    public class In_House : Part
     {
-        public string CompanyName { get; set; }
+        public int MachineID { get; set; }
     }
 }

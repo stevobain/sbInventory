@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sbInventory
+namespace sbInventory.Model
 {
     public abstract class Part
     {
@@ -16,7 +16,7 @@ namespace sbInventory
 
         public int InStock { get; set; }
 
-        public int Min {  get; set; }
+        public int Min { get; set; }
 
         public int Max { get; set; }
     }
