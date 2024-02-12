@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace sbInventory.Model
+﻿namespace sbInventory.Model
 {
     public class In_House : Part
     {
         public int MachineID { get; set; }
+
+        public In_House(string name, int inStock, decimal price, int min, int max, int machineId) :
+            base(name, inStock, price, min, max)
+        {
+            MachineID = machineId;
+        }
     }
 }

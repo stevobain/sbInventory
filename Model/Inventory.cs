@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.ComponentModel;
 
 namespace sbInventory.Model
 {
@@ -16,14 +10,16 @@ namespace sbInventory.Model
 
         public static void AddProduct(Product product)
         {
-
+            Products.Add(product);
         }
 
-        public static bool RemoveProduct(int i)
+        public static bool RemoveProduct(int productId)
         {
-            if (Products.Contains(Products[i]))
+            Product? product = LookupProduct(productId);
+
+            if (product != null)
             {
-                Products.Remove(Products[i]);
+                Products.Remove(product);
                 return true;
             }
             else
@@ -32,19 +28,29 @@ namespace sbInventory.Model
             }
         }
 
-        public static Product LookupProduct(int i)
+        public static Product? LookupProduct(int productId)
         {
-            return Products.SingleOrDefault(p => p.ProductID == i);
+            Product? product = Products.SingleOrDefault(p => p.ProductID == productId);
+            return product;
         }
 
-        public static void UpdateProduct(int i, Product product)
+        public static void UpdateProduct(int productId, Product product)
         {
+            Product? productToUpdate = LookupProduct(productId);
 
+            if (productToUpdate != null)
+            {
+                productToUpdate.Name = product.Name;
+                productToUpdate.InStock = product.InStock;
+                productToUpdate.Price = product.Price;
+                productToUpdate.Min = product.Min;
+                productToUpdate.Max = product.Max;
+            }
         }
 
         public static void AddPart(Part part)
         {
-
+            AllParts.Add(part);
         }
 
         public static bool DeletePart(Part part)
@@ -60,14 +66,23 @@ namespace sbInventory.Model
             }
         }
 
-        public static Part LookupPart(int i)
+        public static Part? LookupPart(int partId)
         {
-            return AllParts.SingleOrDefault(p => p.PartID == i);
+            return AllParts.SingleOrDefault(p => p.PartID == partId);
         }
 
-        public static void UpdatePart(int i, Part part)
+        public static void UpdatePart(int partId, Part part)
         {
+            Part? partToUpdate = LookupPart(partId);
 
+            if (partToUpdate != null)
+            {
+                partToUpdate.Name = part.Name;
+                partToUpdate.InStock= part.InStock;
+                partToUpdate.Price = part.Price;
+                partToUpdate.Min = part.Min;
+                partToUpdate.Max = part.Max;
+            }        
         }
     }
 }
