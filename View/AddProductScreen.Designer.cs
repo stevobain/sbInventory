@@ -42,7 +42,19 @@
             textBox5 = new TextBox();
             textBox6 = new TextBox();
             dataGridView1 = new DataGridView();
+            PartID = new DataGridViewTextBoxColumn();
+            PartName = new DataGridViewTextBoxColumn();
+            PartInventory = new DataGridViewTextBoxColumn();
+            PartPrice = new DataGridViewTextBoxColumn();
+            PartMin = new DataGridViewTextBoxColumn();
+            PartMax = new DataGridViewTextBoxColumn();
             dataGridView2 = new DataGridView();
+            PartID2 = new DataGridViewTextBoxColumn();
+            PartName2 = new DataGridViewTextBoxColumn();
+            PartInventory2 = new DataGridViewTextBoxColumn();
+            PartPrice2 = new DataGridViewTextBoxColumn();
+            PartMin2 = new DataGridViewTextBoxColumn();
+            PartMax2 = new DataGridViewTextBoxColumn();
             label8 = new Label();
             label9 = new Label();
             button1 = new Button();
@@ -51,18 +63,6 @@
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
-            PartID = new DataGridViewTextBoxColumn();
-            PartName = new DataGridViewTextBoxColumn();
-            PartInventory = new DataGridViewTextBoxColumn();
-            PartPrice = new DataGridViewTextBoxColumn();
-            PartMin = new DataGridViewTextBoxColumn();
-            PartMax = new DataGridViewTextBoxColumn();
-            PartID2 = new DataGridViewTextBoxColumn();
-            PartName2 = new DataGridViewTextBoxColumn();
-            PartInventory2 = new DataGridViewTextBoxColumn();
-            PartPrice2 = new DataGridViewTextBoxColumn();
-            PartMin2 = new DataGridViewTextBoxColumn();
-            PartMax2 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -186,6 +186,48 @@
             dataGridView1.Size = new Size(381, 150);
             dataGridView1.TabIndex = 13;
             // 
+            // PartID
+            // 
+            PartID.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            PartID.HeaderText = "Part ID";
+            PartID.Name = "PartID";
+            PartID.Width = 67;
+            // 
+            // PartName
+            // 
+            PartName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            PartName.HeaderText = "Name";
+            PartName.Name = "PartName";
+            PartName.Width = 64;
+            // 
+            // PartInventory
+            // 
+            PartInventory.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            PartInventory.HeaderText = "Inventory";
+            PartInventory.Name = "PartInventory";
+            PartInventory.Width = 82;
+            // 
+            // PartPrice
+            // 
+            PartPrice.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            PartPrice.HeaderText = "Price";
+            PartPrice.Name = "PartPrice";
+            PartPrice.Width = 58;
+            // 
+            // PartMin
+            // 
+            PartMin.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            PartMin.HeaderText = "Min";
+            PartMin.Name = "PartMin";
+            PartMin.Width = 53;
+            // 
+            // PartMax
+            // 
+            PartMax.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            PartMax.HeaderText = "Max";
+            PartMax.Name = "PartMax";
+            PartMax.Width = 55;
+            // 
             // dataGridView2
             // 
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -199,6 +241,48 @@
             dataGridView2.ScrollBars = ScrollBars.Vertical;
             dataGridView2.Size = new Size(381, 150);
             dataGridView2.TabIndex = 14;
+            // 
+            // PartID2
+            // 
+            PartID2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            PartID2.HeaderText = "Part ID";
+            PartID2.Name = "PartID2";
+            PartID2.Width = 67;
+            // 
+            // PartName2
+            // 
+            PartName2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            PartName2.HeaderText = "Name";
+            PartName2.Name = "PartName2";
+            PartName2.Width = 64;
+            // 
+            // PartInventory2
+            // 
+            PartInventory2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            PartInventory2.HeaderText = "Inventory";
+            PartInventory2.Name = "PartInventory2";
+            PartInventory2.Width = 82;
+            // 
+            // PartPrice2
+            // 
+            PartPrice2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            PartPrice2.HeaderText = "Price";
+            PartPrice2.Name = "PartPrice2";
+            PartPrice2.Width = 58;
+            // 
+            // PartMin2
+            // 
+            PartMin2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            PartMin2.HeaderText = "Min";
+            PartMin2.Name = "PartMin2";
+            PartMin2.Width = 53;
+            // 
+            // PartMax2
+            // 
+            PartMax2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            PartMax2.HeaderText = "Max";
+            PartMax2.Name = "PartMax2";
+            PartMax2.Width = 55;
             // 
             // label8
             // 
@@ -228,7 +312,6 @@
             button1.TabIndex = 17;
             button1.Text = "Search";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // textBox7
             // 
@@ -280,90 +363,6 @@
             button5.TabIndex = 22;
             button5.Text = "Cancel";
             button5.UseVisualStyleBackColor = true;
-            // 
-            // PartID
-            // 
-            PartID.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            PartID.HeaderText = "Part ID";
-            PartID.Name = "PartID";
-            PartID.Width = 67;
-            // 
-            // PartName
-            // 
-            PartName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            PartName.HeaderText = "Name";
-            PartName.Name = "PartName";
-            PartName.Width = 64;
-            // 
-            // PartInventory
-            // 
-            PartInventory.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            PartInventory.HeaderText = "Inventory";
-            PartInventory.Name = "PartInventory";
-            PartInventory.Width = 82;
-            // 
-            // PartPrice
-            // 
-            PartPrice.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            PartPrice.HeaderText = "Price";
-            PartPrice.Name = "PartPrice";
-            PartPrice.Width = 58;
-            // 
-            // PartMin
-            // 
-            PartMin.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            PartMin.HeaderText = "Min";
-            PartMin.Name = "PartMin";
-            PartMin.Width = 53;
-            // 
-            // PartMax
-            // 
-            PartMax.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            PartMax.HeaderText = "Max";
-            PartMax.Name = "PartMax";
-            PartMax.Width = 55;
-            // 
-            // PartID2
-            // 
-            PartID2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            PartID2.HeaderText = "Part ID";
-            PartID2.Name = "PartID2";
-            PartID2.Width = 67;
-            // 
-            // PartName2
-            // 
-            PartName2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            PartName2.HeaderText = "Name";
-            PartName2.Name = "PartName2";
-            PartName2.Width = 64;
-            // 
-            // PartInventory2
-            // 
-            PartInventory2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            PartInventory2.HeaderText = "Inventory";
-            PartInventory2.Name = "PartInventory2";
-            PartInventory2.Width = 82;
-            // 
-            // PartPrice2
-            // 
-            PartPrice2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            PartPrice2.HeaderText = "Price";
-            PartPrice2.Name = "PartPrice2";
-            PartPrice2.Width = 58;
-            // 
-            // PartMin2
-            // 
-            PartMin2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            PartMin2.HeaderText = "Min";
-            PartMin2.Name = "PartMin2";
-            PartMin2.Width = 53;
-            // 
-            // PartMax2
-            // 
-            PartMax2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            PartMax2.HeaderText = "Max";
-            PartMax2.Name = "PartMax2";
-            PartMax2.Width = 55;
             // 
             // AddProductScreen
             // 
