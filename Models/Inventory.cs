@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace sbInventory.Model
+namespace sbInventory.Models
 {
     public static class Inventory
     {
@@ -30,8 +30,7 @@ namespace sbInventory.Model
 
         public static Product? LookupProduct(int productId)
         {
-            Product? product = Products.SingleOrDefault(p => p.ProductID == productId);
-            return product;
+            return Products.SingleOrDefault(p => p.ProductID == productId);
         }
 
         public static void UpdateProduct(int productId, Product product)
@@ -55,9 +54,8 @@ namespace sbInventory.Model
 
         public static bool DeletePart(Part part)
         {
-            if (AllParts.Contains(part))
+            if (AllParts.Remove(part))
             {
-                AllParts.Remove(part);
                 return true;
             }
             else
@@ -78,11 +76,11 @@ namespace sbInventory.Model
             if (partToUpdate != null)
             {
                 partToUpdate.Name = part.Name;
-                partToUpdate.InStock= part.InStock;
+                partToUpdate.InStock = part.InStock;
                 partToUpdate.Price = part.Price;
                 partToUpdate.Min = part.Min;
                 partToUpdate.Max = part.Max;
-            }        
+            }
         }
     }
 }

@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel;
 
-namespace sbInventory.Model
+namespace sbInventory.Models
 {
-    public abstract class Part : INotifyPropertyChanged
+    public class Product : INotifyPropertyChanged
     {
-        public int PartID { get; private set; }
+        public BindingList<Part> AssociatedParts = new BindingList<Part>();
+
+        public int ProductID { get; private set; }
 
         private string _name;
         public string Name
@@ -78,9 +80,9 @@ namespace sbInventory.Model
 
         public static int id = 1;
 
-        public Part(string name, int inStock, decimal price, int min, int max)
+        public Product(string name, int inStock, decimal price, int min, int max)
         {
-            PartID = id++;
+            ProductID = id++;
             Name = name;
             InStock = inStock;
             Price = price;
@@ -93,6 +95,32 @@ namespace sbInventory.Model
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void AddAssociatedPart(Part part)
+        {
+            AssociatedParts.Add(part);
+        }
+
+        public bool RemoveAssociatedPart(int partId)
+        {
+            Part? associatedPart = LookupAssociatedPart(partId);
+
+            if (associatedPart != null)
+            {
+                AssociatedParts.Remove(associatedPart);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public Part? LookupAssociatedPart(int partId)
+        {
+            Part? associatedPart = AssociatedParts.SingleOrDefault(p => p.PartID == partId);
+            return associatedPart;
         }
     }
 }

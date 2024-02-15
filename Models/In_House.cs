@@ -1,4 +1,4 @@
-﻿namespace sbInventory.Model
+﻿namespace sbInventory.Models
 {
     public class In_House : Part
     {

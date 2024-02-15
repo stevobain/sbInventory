@@ -1,6 +1,6 @@
-﻿namespace sbInventory
+﻿namespace sbInventory.Forms
 {
-    partial class AddPartScreen
+    partial class AddPartForm
     {
         /// <summary>
         /// Required designer variable.
@@ -147,6 +147,8 @@
             // 
             // idTextBox
             // 
+            idTextBox.Cursor = Cursors.No;
+            idTextBox.Enabled = false;
             idTextBox.Location = new Point(95, 26);
             idTextBox.Name = "idTextBox";
             idTextBox.ReadOnly = true;
@@ -159,6 +161,7 @@
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(100, 23);
             nameTextBox.TabIndex = 11;
+            nameTextBox.TextChanged += nameTextBox_TextChanged;
             // 
             // inventoryTextBox
             // 
@@ -166,6 +169,7 @@
             inventoryTextBox.Name = "inventoryTextBox";
             inventoryTextBox.Size = new Size(100, 23);
             inventoryTextBox.TabIndex = 12;
+            inventoryTextBox.TextChanged += inventoryTextBox_TextChanged;
             // 
             // priceCostTextBox
             // 
@@ -173,6 +177,7 @@
             priceCostTextBox.Name = "priceCostTextBox";
             priceCostTextBox.Size = new Size(100, 23);
             priceCostTextBox.TabIndex = 13;
+            priceCostTextBox.TextChanged += priceCostTextBox_TextChanged;
             // 
             // maxTextBox
             // 
@@ -180,6 +185,7 @@
             maxTextBox.Name = "maxTextBox";
             maxTextBox.Size = new Size(50, 23);
             maxTextBox.TabIndex = 14;
+            maxTextBox.TextChanged += maxTextBox_TextChanged;
             // 
             // minTextBox
             // 
@@ -187,6 +193,7 @@
             minTextBox.Name = "minTextBox";
             minTextBox.Size = new Size(50, 23);
             minTextBox.TabIndex = 15;
+            minTextBox.TextChanged += minTextBox_TextChanged;
             // 
             // machineIdCompanyNameTextBox
             // 
@@ -194,6 +201,7 @@
             machineIdCompanyNameTextBox.Name = "machineIdCompanyNameTextBox";
             machineIdCompanyNameTextBox.Size = new Size(100, 23);
             machineIdCompanyNameTextBox.TabIndex = 16;
+            machineIdCompanyNameTextBox.TextChanged += machineIdCompanyNameTextBox_TextChanged;
             // 
             // saveButton
             // 
